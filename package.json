@@ -1,0 +1,30 @@
+{
+  "name": "linktx-mvp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "sign": "tsx src/cli/sign-verify.ts sign",
+    "verify": "tsx src/cli/sign-verify.ts verify",
+    "compose:up": "docker compose -f docker/docker-compose.yml up -d",
+    "compose:down": "docker compose -f docker/docker-compose.yml down"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "canonicalize": "^1.0.8",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.28.1",
+    "jose": "^5.2.4",
+    "pino": "^9.3.2",
+    "ulid": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.4"
+  }
+}

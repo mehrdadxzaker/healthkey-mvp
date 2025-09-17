@@ -1,0 +1,19 @@
+# dependencies
+/node_modules
+/pnpm-lock.yaml
+/package-lock.json
+/yarn.lock
+
+# builds
+/dist
+/.turbo
+/.tsbuildinfo
+
+# env & keys
+.env
+.env.*
+config/*private*.pem
+config/*-ed25519-private.pem
+
+# data
+/data

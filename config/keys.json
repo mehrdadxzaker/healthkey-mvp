@@ -1,0 +1,4 @@
+{
+  "did:web:example.org#key-1": "./config/dev-ed25519-public.pem",
+  "did:web:example.org#log-key": "./config/log-ed25519-public.pem"
+}

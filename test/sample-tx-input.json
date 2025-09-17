@@ -1,0 +1,27 @@
+{
+  "actor": { "id": "did:web:example.org#key-1", "role": "processor" },
+  "action": "READ",
+  "resource_ref": {
+    "scheme": "dbid",
+    "id": "tenantA:orders:uuidv7:018f3b7a-0000-0000-0000-b5",
+    "version": "42"
+  },
+  "hash_commitment": {
+    "alg": "sha-256",
+    "value": "TO_BE_FILLED",
+    "schema": "v1/orders_read_snapshot@42"
+  },
+  "consent_snapshot": {
+    "consent_id": "urn:consent:abc123",
+    "legal_basis": "dpv:Consent",
+    "purpose": "dpv:FraudPrevention",
+    "status": "dpv:Given",
+    "valid_until": "2030-09-17T00:00:00Z",
+    "notice_hash": "HASH_OF_NOTICE"
+  },
+  "audit": {
+    "request_id": "req_12345",
+    "client": { "ip": "203.0.113.7", "device": "api-gateway-1" },
+    "authn": { "method": "mTLS", "sub": "svc:ingester" }
+  }
+}

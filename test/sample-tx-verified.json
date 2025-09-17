@@ -1,0 +1,4 @@
+{
+  "ok": true,
+  "tx": "Paste a signed tx here to verify with POST /verify"
+}

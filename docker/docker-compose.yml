@@ -1,0 +1,8 @@
+services:
+  opa:
+    image: openpolicyagent/opa:latest
+    command: ["run", "--server", "--addr=:8181", "/policies/linktx.rego"]
+    ports:
+      - "8181:8181"
+    volumes:
+      - ../policy:/policies:ro

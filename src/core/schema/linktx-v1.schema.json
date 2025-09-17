@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/linktx-v1.json",
+  "title": "LinkTx v1",
+  "type": "object",
+  "required": [
+    "action",
+    "actor",
+    "resource_ref",
+    "hash_commitment"
+  ],
+  "properties": {
+    "tx_id": {
+      "type": "string",
+      "description": "ULID (server generated)"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "actor": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "DID URL for verification method"
+        },
+        "role": {
+          "type": "string"
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "READ",
+        "WRITE",
+        "DISCLOSE",
+        "DELETE"
+      ]
+    },
+    "resource_ref": {
+      "type": "object",
+      "required": [
+        "scheme",
+        "id"
+      ],
+      "properties": {
+        "scheme": {
+          "type": "string",
+          "enum": [
+            "dbid",
+            "cid",
+            "zcap",
+            "did-resource"
+          ]
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": [
+            "string",
+            "integer",
+            "null"
+          ]
+        },
+        "cap_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "hash_commitment": {
+      "type": "object",
+      "required": [
+        "alg",
+        "value",
+        "schema"
+      ],
+      "properties": {
+        "alg": {
+          "type": "string",
+          "enum": [
+            "sha-256",
+            "sha-512"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "consent_snapshot": {
+      "type": "object",
+      "properties": {
+        "consent_id": {
+          "type": "string"
+        },
+        "legal_basis": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "valid_until": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "notice_hash": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "prev_tx": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "log_inclusion": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "sig": {
+      "type": "object",
+      "required": [
+        "suite",
+        "kid",
+        "jws"
+      ],
+      "properties": {
+        "suite": {
+          "type": "string",
+          "enum": [
+            "JOSE+EdDSA",
+            "COSE+EdDSA"
+          ]
+        },
+        "kid": {
+          "type": "string"
+        },
+        "jws": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
