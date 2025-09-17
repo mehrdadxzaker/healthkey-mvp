@@ -1,4 +1,4 @@
-# LinkTx MVP — verifiable audit trail for database access
+# HealthKey MVP — verifiable audit trail for database access
 
 A tiny, lovable product that records **who did what to which data and why**, as cryptographically verifiable transactions.
 Each transaction (**LinkTx**) is:
