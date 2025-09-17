@@ -8,17 +8,6 @@ Each transaction (**LinkTx**) is:
 - Appended to an append-only transparency log (in-memory Merkle log for the MVP),
 - Optionally checked by a policy engine (OPA/Rego).
 
----
-
-## Why TypeScript/Fastify for the MVP?
-
-- **DX & speed**: easy JSON-first APIs, great libraries for JOSE/JWS, fast event loop.
-- **Crypto libs**: `jose` for Ed25519 JWS; Node `crypto` for hashing.
-- **Easy to swap**: You can later migrate the transparency log to **Rekor/Trillian** or port to **Go** for tighter Sigstore integration without changing the LinkTx schema.
-
-If you prefer Go, see the **Go port roadmap** at the end of this README.
-
----
 
 ## Quick start
 
