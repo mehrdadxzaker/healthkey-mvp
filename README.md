@@ -8,8 +8,6 @@ Each transaction (**LinkTx**) is:
 - Appended to an append-only transparency log (in-memory Merkle log for the MVP),
 - Optionally checked by a policy engine (OPA/Rego).
 
-> **Note:** This is a skeleton meant for learning and bootstrapping. It avoids storing any PII in the log—only pointers/commitments and consent snapshots.
-
 ---
 
 ## Why TypeScript/Fastify for the MVP?
