@@ -145,16 +145,6 @@ See `.env.example` for knobs and defaults. The defaults are secure for local dev
 
 ---
 
-## Go port roadmap (optional)
-
-- Keep the JSON schema and HTTP shapes identical.
-- Use Go's `crypto/ed25519` + `github.com/sigstore/rekor` for a Rekor-backed log,
-- Swap the in-memory log for Rekor (append + get inclusion proof),
-- Use `github.com/open-policy-agent/opa` as a library or sidecar.
-- Reuse the Rego policy and LinkTx schema without changes.
-
----
-
 ## License
 
 Apache-2.0 (feel free to adapt).
